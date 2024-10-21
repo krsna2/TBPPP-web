@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class Timetable</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .timetable {
+            border-collapse: collapse;
+            background-color: white;
+        }
+        .timetable th, .timetable td {
+            border: 1px solid black;
+            padding: 10px;
+            text-align: center;
+        }
+        .timetable th {
+            background-color: #f2f2f2;
+        }
+        .hours {
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+            transform: rotate(180deg);
+            padding: 10px 5px;
+        }
+        .lunch {
+            font-weight: bold;
+        }
+        .subject:hover {
+            background-color: #e6e6e6;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <table class="timetable">
+        <tr>
+            <th colspan="6">timetable</th>
+        </tr>
+        <tr>
+            <th></th>
+            <th>mon</th>
+            <th>tue</th>
+            <th>wed</th>
+            <th>thurs</th>
+            <th>fri</th>
+        </tr>
+        <tr>
+            <td rowspan="5" class="hours">hours</td>
+            <td class="subject">science</td>
+            <td class="subject">maths</td>
+            <td class="subject">science</td>
+            <td class="subject">maths</td>
+            <td class="subject">arts</td>
+        </tr>
+        <tr>
+            <td class="subject">social</td>
+            <td class="subject">hindi</td>
+            <td class="subject">english</td>
+            <td class="subject">social</td>
+            <td class="subject">sports</td>
+        </tr>
+        <tr>
+            <td colspan="5" class="lunch">lunch</td>
+        </tr>
+        <tr>
+            <td class="subject">science</td>
+            <td class="subject">maths</td>
+            <td class="subject">science</td>
+            <td class="subject">maths</td>
+            <td rowspan="2" class="subject">project</td>
+        </tr>
+        <tr>
+            <td class="subject">social</td>
+            <td class="subject">hindi</td>
+            <td class="subject">english</td>
+            <td class="subject">social</td>
+        </tr>
+    </table>
+
+    <script>
+        document.querySelectorAll('.subject').forEach(cell => {
+            cell.addEventListener('click', () => {
+                alert(`You clicked on ${cell.textContent}`);
+                // Here you can implement the logic to open a new page with teacher details
+            });
+        });
+    </script>
+</body>
+</html>
